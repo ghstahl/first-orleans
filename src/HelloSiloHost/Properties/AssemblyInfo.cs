@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Grains1")]
+[assembly: AssemblyTitle("HelloSiloHost")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Grains1")]
+[assembly: AssemblyProduct("HelloSiloHost")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("872ce6ab-da2d-49ff-af0f-fcf5a2479776")]
+[assembly: Guid("19ca1326-1c0a-49dd-8f54-6b9479149c2c")]
 
 // Version information for an assembly consists of the following four values:
 //

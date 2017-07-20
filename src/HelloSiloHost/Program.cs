@@ -1,10 +1,10 @@
 using System;
-using GrainInterfaces1;
+using HelloGrainInterfaces;
 using Orleans;
 using Orleans.Runtime.Configuration;
 using Orleans.Runtime.Host;
 
-namespace SiloHost1
+namespace HelloSiloHost
 {
     /// <summary>
     /// Orleans test silo host
@@ -27,13 +27,14 @@ namespace SiloHost1
             client.Connect().Wait();
 
             Console.WriteLine("Client connected.");
+
+            //
+            // This is the place for your test code.
+            //
             var config = Orleans.Runtime.Configuration.ClientConfiguration.LocalhostSilo();
             GrainClient.Initialize(config);
             var friend = GrainClient.GrainFactory.GetGrain<IHello>(0);
             Console.WriteLine("\n\n{0}\n\n", friend.SayHello("Goodbye").Result);
-            //
-            // This is the place for your test code.
-            //
 
             Console.WriteLine("\nPress Enter to terminate...");
             Console.ReadLine();

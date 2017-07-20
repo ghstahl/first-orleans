@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using GrainInterfaces1;
+using HelloGrainInterfaces;
 using Orleans;
 
-namespace Grains1
+namespace HelloGrains
 {
     /// <summary>
     /// Grain implementation class Grain1.

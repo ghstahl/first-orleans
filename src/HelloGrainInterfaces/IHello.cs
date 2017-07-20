@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Orleans;
 
-namespace GrainInterfaces1
+namespace HelloGrainInterfaces
 {
     /// <summary>
-    /// Grain interface IGrain1
+    /// Grain interface IHello
     /// </summary>
     public interface IHello : Orleans.IGrainWithIntegerKey
     {

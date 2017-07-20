@@ -10,9 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OrleansAzureSilos</RootNamespace>
     <AssemblyName>OrleansAzureSilos</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RoleType>Worker</RoleType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,9 +174,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Grains1\Grains1.csproj">
-      <Project>{872ce6ab-da2d-49ff-af0f-fcf5a2479776}</Project>
-      <Name>Grains1</Name>
+    <ProjectReference Include="..\HelloGrainInterfaces\HelloGrainInterfaces.csproj">
+      <Project>{e8cde420-95a9-424d-a549-3b0c7e4ad37b}</Project>
+      <Name>HelloGrainInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelloGrains\HelloGrains.csproj">
+      <Project>{ffb31e70-3eef-4ae4-8e44-7b3d4aaca9a3}</Project>
+      <Name>HelloGrains</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
