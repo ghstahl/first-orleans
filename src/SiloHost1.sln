@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiloHost1", "SiloHost1\Silo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{E5AC68ED-D72A-434E-8180-F9150DB2CB88}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "OrleansAzureSample", "OrleansAzureSample\OrleansAzureSample.ccproj", "{100B929A-1119-4C06-A1CC-FDF41F5FEA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansAzureSilos", "OrleansAzureSilos\OrleansAzureSilos.csproj", "{00ABF5A2-4F27-48BC-911C-C42F12FA0186}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{E5AC68ED-D72A-434E-8180-F9150DB2CB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5AC68ED-D72A-434E-8180-F9150DB2CB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5AC68ED-D72A-434E-8180-F9150DB2CB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100B929A-1119-4C06-A1CC-FDF41F5FEA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100B929A-1119-4C06-A1CC-FDF41F5FEA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100B929A-1119-4C06-A1CC-FDF41F5FEA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100B929A-1119-4C06-A1CC-FDF41F5FEA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00ABF5A2-4F27-48BC-911C-C42F12FA0186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00ABF5A2-4F27-48BC-911C-C42F12FA0186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00ABF5A2-4F27-48BC-911C-C42F12FA0186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00ABF5A2-4F27-48BC-911C-C42F12FA0186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
