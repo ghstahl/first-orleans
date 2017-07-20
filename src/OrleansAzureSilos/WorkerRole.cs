@@ -12,6 +12,7 @@ using Microsoft.WindowsAzure.Storage;
 using Orleans.Providers;
 using Orleans.Runtime.Configuration;
 using Orleans.Runtime.Host;
+using OrleansHttp;
 
 namespace OrleansAzureSilos
 {
@@ -198,6 +199,9 @@ namespace OrleansAzureSilos
             // Providers:
             //      BootstrapProviders:
             //          Name=MyNewBootstrapProvider, Type=FullNameSpace.NewBootstrapProviderType, Properties=[]
+            var properties = new Dictionary<string, string> {{"Port", "12399"}};
+
+            config.Globals.RegisterBootstrapProvider<Bootstrap>("http", properties);
         }
     }
 }
