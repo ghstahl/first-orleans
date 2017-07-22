@@ -1,15 +1,17 @@
-﻿using Microsoft.Owin;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Owin;
+using Newtonsoft.Json;
 
-namespace OrleansHttp
+namespace Orleans.HttpApi
 {
     public static class ExtensionMethods
     {
-        public static JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings{TypeNameHandling = TypeNameHandling.Auto};
+        public static JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
         public static Task ReturnJson(this IOwinContext context, object value)
         {
             context.Response.ContentType = "application/json";
@@ -22,7 +24,7 @@ namespace OrleansHttp
             context.Response.StatusCode = 500;
             return context.Response.WriteAsync(ex.ToString());
         }
-        
+
         public static Task ReturnUnauthorised(this IOwinContext context)
         {
             context.Response.StatusCode = 401;

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +10,9 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Owin;
 
-namespace OrleansHttp
+namespace Orleans.HttpApi
 {
-    public class WebServer 
+    public class WebServer
     {
         public WebServer(Router router, string username, string password)
         {
@@ -67,7 +69,7 @@ namespace OrleansHttp
                 // if a username and password are supplied, enable basic auth
                 app.Use(BasicAuth);
             }
-            
+
 
             string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string path = Path.Combine(dir, @"Static");
@@ -88,5 +90,4 @@ namespace OrleansHttp
             app.Use(HandleRequest);
         }
     }
-
 }

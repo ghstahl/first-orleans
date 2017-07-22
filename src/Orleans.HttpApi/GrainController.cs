@@ -1,20 +1,16 @@
-﻿using Microsoft.Owin;
-using Newtonsoft.Json;
-using Orleans;
-using Orleans.Providers;
-using System;
-using System.Collections.Concurrent;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading;
+using System.Text;
 using System.Threading.Tasks;
-using OrleansHttp.Grains;
+using Microsoft.Owin;
+using Newtonsoft.Json;
 
+using Orleans.Providers;
 
-namespace OrleansHttp
+namespace Orleans.HttpApi
 {
-
     public class GrainController : GrainCaller
     {
         public GrainController(Router router, TaskScheduler taskScheduler, IProviderRuntime providerRuntime) : base(taskScheduler, providerRuntime.GrainFactory)
@@ -29,17 +25,20 @@ namespace OrleansHttp
 
         public Task Ping(IOwinContext context, IDictionary<string, string> parameters)
         {
-            return TaskDone.Done;    
+            return TaskDone.Done;
         }
 
         public async Task PingGrain(IOwinContext context, IDictionary<string, string> parameters)
         {
+            return;
+            /*
             var result = await Dispatch(async () =>
             {
                 var grain = GrainFactory.GetGrain<ITestGrain>("0");
                 await grain.Test();
                 return null;
             });
+            */
         }
 
 
@@ -61,7 +60,7 @@ namespace OrleansHttp
             if (null == grainMethod) throw new MissingMethodException(grainTypeName, grainMethodName);
 
             var result = await CallGrain(grainType, grain, grainMethod, grainMethodParams);
-       
+
             await context.ReturnJson(result);
         }
 

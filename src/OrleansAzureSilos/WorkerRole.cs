@@ -12,7 +12,7 @@ using Microsoft.WindowsAzure.Storage;
 using Orleans.Providers;
 using Orleans.Runtime.Configuration;
 using Orleans.Runtime.Host;
-using OrleansHttp;
+using Orleans.HttpApi;
 
 namespace OrleansAzureSilos
 {

@@ -1,35 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Owin.Hosting;
-using Orleans;
 using Orleans.Providers;
 using Orleans.Runtime;
 
-namespace OrleansHttp
+namespace Orleans.HttpApi
 {
     public class Bootstrap : IBootstrapProvider
     {
         IDisposable host;
-        Logger logger;
-      
-        public string Name { get; private set; }
-
-
-        public Task Close()
+        private int initCount;
+        public Bootstrap()
         {
-            host.Dispose();
-            return TaskDone.Done;
+#if DEBUG
+            // Note: Can't use logger here because it is not initialized until the Init method is called.
+            Console.WriteLine("Constructor - Orleans.HttpApi Bootstrap");
+#endif
         }
-
-
         public Task Init(string name, IProviderRuntime providerRuntime, IProviderConfiguration config)
         {
-            this.logger = providerRuntime.GetLogger(name);
-            this.Name = name;
+            Name = name;
+            logger = providerRuntime.GetLogger(GetType().Name);
+            logger.Info("Init Name={0}", Name);
+            Interlocked.Increment(ref initCount);
 
             var router = new Router();
-            new GrainController(router, TaskScheduler.Current,  providerRuntime);
-
+            new GrainController(router, TaskScheduler.Current, providerRuntime);
             var options = new StartOptions
             {
                 ServerFactory = "Nowin",
@@ -40,10 +40,16 @@ namespace OrleansHttp
             var password = config.Properties.ContainsKey("Password") ? config.Properties["Password"] : null;
 
             host = WebApp.Start(options, app => new WebServer(router, username, password).Configure(app));
-
-            this.logger.Verbose($"HTTP API listening on {options.Port}");
-
-            return Task.FromResult(0);
+            return Task.CompletedTask;
         }
+
+        public Task Close()
+        {
+            logger.Info("Close Name={0}", Name);
+            return Task.CompletedTask;
+        }
+
+        public string Name { get; private set; }
+        protected Logger logger { get; private set; }
     }
 }
