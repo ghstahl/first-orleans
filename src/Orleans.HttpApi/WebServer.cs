@@ -3,15 +3,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.Security.Infrastructure;
+using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Owin;
 
 namespace Orleans.HttpApi
 {
+    public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
+    {
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        {
+            context.Validated();
+        }
+
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        {
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+
+            if (context.UserName != context.Password)
+            {
+                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                return;
+            }
+
+            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+            identity.AddClaim(new Claim("sub", context.UserName));
+            identity.AddClaim(new Claim(ClaimTypes.Role, "user"));
+
+            context.Validated(identity);
+
+        }
+    }
     public class WebServer
     {
         public WebServer(Router router, string username, string password)
@@ -88,6 +116,11 @@ namespace Orleans.HttpApi
                 });
             }
             app.Use(HandleRequest);
+            var oAuthAuthorizationServerOptions = new OAuthBearerAuthenticationOptions()
+            {
+               
+            };
+            app.UseOAuthBearerAuthentication(oAuthAuthorizationServerOptions);
         }
     }
 }

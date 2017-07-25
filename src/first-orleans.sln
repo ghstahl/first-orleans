@@ -22,6 +22,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{1C199C59-F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans.HttpApi", "Orleans.HttpApi\Orleans.HttpApi.csproj", "{AE64A8A8-0AFB-444E-8803-04B0CA4FA731}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{5EA85EFB-DADE-476C-AB41-47384C3A7365}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.0", "2.0", "{1AC05FB8-5774-4C17-8DE7-87B3B496CBAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloGrainInterfaces.Core", "HelloGrainInterfaces.Core\HelloGrainInterfaces.Core.csproj", "{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGrains.Core", "HelloGrains.Core\HelloGrains.Core.csproj", "{4B33BFCD-94D1-4059-80D0-6DEA08AFD713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiloHost.Core", "SiloHost.Core\SiloHost.Core.csproj", "{9986CD92-ACE4-4534-B272-35BC1BB707AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansClient.Core", "OrleansClient.Core\OrleansClient.Core.csproj", "{196757D6-1EE6-4792-88BF-19EDDD1AF173}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,8 +68,34 @@ Global
 		{AE64A8A8-0AFB-444E-8803-04B0CA4FA731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE64A8A8-0AFB-444E-8803-04B0CA4FA731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE64A8A8-0AFB-444E-8803-04B0CA4FA731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA85EFB-DADE-476C-AB41-47384C3A7365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA85EFB-DADE-476C-AB41-47384C3A7365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA85EFB-DADE-476C-AB41-47384C3A7365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA85EFB-DADE-476C-AB41-47384C3A7365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B33BFCD-94D1-4059-80D0-6DEA08AFD713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B33BFCD-94D1-4059-80D0-6DEA08AFD713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B33BFCD-94D1-4059-80D0-6DEA08AFD713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B33BFCD-94D1-4059-80D0-6DEA08AFD713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9986CD92-ACE4-4534-B272-35BC1BB707AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9986CD92-ACE4-4534-B272-35BC1BB707AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9986CD92-ACE4-4534-B272-35BC1BB707AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9986CD92-ACE4-4534-B272-35BC1BB707AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196757D6-1EE6-4792-88BF-19EDDD1AF173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196757D6-1EE6-4792-88BF-19EDDD1AF173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196757D6-1EE6-4792-88BF-19EDDD1AF173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196757D6-1EE6-4792-88BF-19EDDD1AF173}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43B40FDA-0DF7-46BD-A514-EB3AE695A9D4} = {1AC05FB8-5774-4C17-8DE7-87B3B496CBAA}
+		{4B33BFCD-94D1-4059-80D0-6DEA08AFD713} = {1AC05FB8-5774-4C17-8DE7-87B3B496CBAA}
+		{9986CD92-ACE4-4534-B272-35BC1BB707AE} = {1AC05FB8-5774-4C17-8DE7-87B3B496CBAA}
+		{196757D6-1EE6-4792-88BF-19EDDD1AF173} = {1AC05FB8-5774-4C17-8DE7-87B3B496CBAA}
 	EndGlobalSection
 EndGlobal
