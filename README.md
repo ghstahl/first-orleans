@@ -1,7 +1,11 @@
 # first-orleans
 My First Microsoft Orleans App
 
-make sure you get the latest azure storage emulator from [Here](https://azure.microsoft.com/en-us/downloads/)
+## Azure
+Make sure you get the latest [azure storage emulator](https://azure.microsoft.com/en-us/downloads/)
+
+## Orleans 2.0 .Net Core
+[Orleans 2.0 .Net Core](https://blogs.msdn.microsoft.com/orleans/2017/03/02/orleans-1-4-and-2-0-tech-preview-2-for-net-core-released/)
 
 ## OrleansHttp
 ```
