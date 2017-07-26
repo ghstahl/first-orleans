@@ -6,6 +6,9 @@ Make sure you get the latest [azure storage emulator](https://azure.microsoft.co
 
 ## Orleans 2.0 .Net Core
 [Orleans 2.0 .Net Core](https://blogs.msdn.microsoft.com/orleans/2017/03/02/orleans-1-4-and-2-0-tech-preview-2-for-net-core-released/)
+1. [Console host](src/SiloHost.Core) This hosts the orlean grains
+2. [Console Client](src/OrleansClient.Core)  This is the client that calls into the grains
+
 
 ## OrleansHttp
 ```
